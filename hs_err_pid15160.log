@@ -1,0 +1,253 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 123731968 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3614), pid=15160, tid=8320
+#
+# JRE version:  (17.0.13+11) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.13+11, mixed mode, emulated-client, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=52942 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dmanagement.endpoints.jmx.exposure.include=* -Dspring.application.admin.enabled=true -Dspring.output.ansi.enabled=always -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=backend -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages com.bhuvi.demo.BackendApplication
+
+Host: AMD Ryzen 3 5300U with Radeon Graphics         , 8 cores, 7G,  Windows 11 , 64 bit Build 26100 (10.0.26100.4768)
+Time: Sun Sep 14 11:17:45 2025 India Standard Time elapsed time: 2.110759 seconds (0d 0h 0m 2s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002182564fc80):  JavaThread "Unknown thread" [_thread_in_vm, id=8320, stack(0x00000075e2500000,0x00000075e2600000)]
+
+Stack: [0x00000075e2500000,0x00000075e2600000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x682a19]
+V  [jvm.dll+0x839538]
+V  [jvm.dll+0x83afe3]
+V  [jvm.dll+0x83b653]
+V  [jvm.dll+0x24704f]
+V  [jvm.dll+0x67f809]
+V  [jvm.dll+0x6746fa]
+V  [jvm.dll+0x304a96]
+V  [jvm.dll+0x30bf56]
+V  [jvm.dll+0x35da5e]
+V  [jvm.dll+0x35dc9d]
+V  [jvm.dll+0x2dbe5c]
+V  [jvm.dll+0x2dcd74]
+V  [jvm.dll+0x80b44b]
+V  [jvm.dll+0x36b491]
+V  [jvm.dll+0x7e9e3f]
+V  [jvm.dll+0x3f1d7f]
+V  [jvm.dll+0x3f38b1]
+C  [jli.dll+0x5278]
+C  [ucrtbase.dll+0x37b0]
+C  [KERNEL32.DLL+0x2e8d7]
+C  [ntdll.dll+0x3c34c]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffdfc907f58, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000218256a8330 GCTaskThread "GC Thread#0" [stack: 0x00000075e2600000,0x00000075e2700000] [id=16428]
+  0x00000218256bb090 ConcurrentGCThread "G1 Main Marker" [stack: 0x00000075e2700000,0x00000075e2800000] [id=21000]
+  0x00000218256bb9c0 ConcurrentGCThread "G1 Conc#0" [stack: 0x00000075e2800000,0x00000075e2900000] [id=22148]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffdfc0bc987]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000002182564a690] Heap_lock - owner thread: 0x000002182564fc80
+
+Heap address: 0x000000008ac00000, size: 1876 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x000000008ac00000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffdfc4ac179]
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.048 Loaded shared library C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff62ffe0000 - 0x00007ff62ffee000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\javaw.exe
+0x00007ffe6aea0000 - 0x00007ffe6b107000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffe40950000 - 0x00007ffe40970000 	C:\Program Files\AVG\Antivirus\aswhook.dll
+0x00007ffe69e20000 - 0x00007ffe69ee9000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffe681b0000 - 0x00007ffe685a0000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffe68960000 - 0x00007ffe68aab000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffe5f7f0000 - 0x00007ffe5f80e000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\VCRUNTIME140.dll
+0x00007ffe512a0000 - 0x00007ffe512b7000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\jli.dll
+0x00007ffe6a180000 - 0x00007ffe6a345000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffe68730000 - 0x00007ffe68757000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffe6a6e0000 - 0x00007ffe6a70b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffe39510000 - 0x00007ffe397aa000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.4768_none_3e0c112ce331287c\COMCTL32.dll
+0x00007ffe67fd0000 - 0x00007ffe68108000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffe69f00000 - 0x00007ffe69fa9000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffe68760000 - 0x00007ffe68803000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffe6a090000 - 0x00007ffe6a0bf000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffe630c0000 - 0x00007ffe630cc000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\vcruntime140_1.dll
+0x00007ffe22d50000 - 0x00007ffe22ddd000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\msvcp140.dll
+0x00007ffdfbdd0000 - 0x00007ffdfca3b000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\server\jvm.dll
+0x00007ffe68c30000 - 0x00007ffe68ce4000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffe69390000 - 0x00007ffe69436000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffe69440000 - 0x00007ffe69558000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffe68e60000 - 0x00007ffe68ed4000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffe62220000 - 0x00007ffe62255000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffe62260000 - 0x00007ffe6226b000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffe67e30000 - 0x00007ffe67e8e000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffe67e10000 - 0x00007ffe67e24000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffe66cf0000 - 0x00007ffe66d0b000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffe62da0000 - 0x00007ffe62daa000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\jimage.dll
+0x00007ffe5b720000 - 0x00007ffe5b961000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffe6a350000 - 0x00007ffe6a6d5000 	C:\WINDOWS\System32\combase.dll
+0x00007ffe69d20000 - 0x00007ffe69e00000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffe5ad80000 - 0x00007ffe5adc3000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffe68110000 - 0x00007ffe681a9000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffe50dd0000 - 0x00007ffe50df5000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin;C:\WINDOWS\SYSTEM32;C:\Program Files\AVG\Antivirus;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.4768_none_3e0c112ce331287c;C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin\server
+
+VM Arguments:
+jvm_args: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=52942 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dmanagement.endpoints.jmx.exposure.include=* -Dspring.application.admin.enabled=true -Dspring.output.ansi.enabled=always -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=backend -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: com.bhuvi.demo.BackendApplication
+java_class_path (initial): C:\hellobhuvi\bookfinder\backend\target\classes;C:\Users\bhuva\.m2\repository\org\json\json\20230227\json-20230227.jar;C:\Users\bhuva\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.5.5\spring-boot-starter-data-jpa-3.5.5.jar;C:\Users\bhuva\.m2\repository\org\springframework\boot\spring-boot-starter\3.5.5\spring-boot-starter-3.5.5.jar;C:\Users\bhuva\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.5.5\spring-boot-starter-logging-3.5.5.jar;C:\Users\bhuva\.m2\repository\ch\qos\logback\logback-classic\1.5.18\logback-classic-1.5.18.jar;C:\Users\bhuva\.m2\repository\ch\qos\logback\logback-core\1.5.18\logback-core-1.5.18.jar;C:\Users\bhuva\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar;C:\Users\bhuva\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\bhuva\.m2\repository\org\slf4j\jul-to-slf4j\2.0.17\jul-to-slf4j-2.0.17.jar;C:\Users\bhuva\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\bhuva\.m2\repository\org\yaml\snakeyaml\2.4\snakeyaml-2.4.jar;C:\Users\bhuva\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.5.5\spring-boot-starter-jdbc-3.5.5.jar;C:\Users\bhuva\.m2\repository\com\zaxxer\HikariCP\6.3.2\HikariCP-6.3.2.jar;C:\Users\bhuva\.m2\repository\org\springframework\spring-jdbc\6.2.10\spring-jdbc-6.2.10.jar;C:\Users\bhuva\.m2\repository\org\hibernate\orm\hibernate-core\6.6.26.Final\hibernate-core-6.6.26.Final.jar;C:\Users\bhuva\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\bhuva\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\bhuva\.m2\repository\org\jboss\logging\jboss-logging\3.6.1.Final\jboss-logging-3.6.1.Final.jar;C:\Users\bhuva\.m2\repository\org\hibernate\common\hibernate-commons-annotations\7.0.3.Final\hibernate-commons-
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 123731968                                 {product} {ergonomic}
+     bool ManagementServer                         = true                                      {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1967128576                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 0                                      {pd product} {ergonomic}
+     bool ProfileInterpreter                       = false                                  {pd product} {command line}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 1967128576                             {manageable} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\OpenLogic\jdk-22.0.2.9-hotspot
+PATH=D:/spring/sts-4.30.0.RELEASE//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.6.v20250130-0529/jre/bin/server;D:/spring/sts-4.30.0.RELEASE//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.6.v20250130-0529/jre/bin;C:\App\db_home\bin;C:\Program Files\Eclipse Adoptium\jdk-17.0.13.11-hotspot\bin;C:\Program Files\OpenLogic\jdk-22.0.2.9-hotspot\bin;C:\Users\bhuva\OneDrive\Desktop\javascript;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\HP\HP One Agent;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Users\bhuva\Downloads\node-v22.11.0-x64.msi;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs;C:\Program Files\nodejs\node.exe;C:\Program Files\nodejs\npm.ps1;C:\Users\bhuva\AppData\Local\Android\Sdk;C:\Users\bhuva\AppData\Local\Android\Sdk\build-tools;C:\Users\bhuva\AppData\Local\Android\Sdk\cmdline-tools;C:\Users\bhuva\AppData\Local\Android\Sdk\emulator;C:\Users\bhuva\AppData\Local\Android\Sdk\platforms;C:\Users\bhuva\AppData\Local\Android\Sdk\build-tools\34.0.0\lld-bin;C:\Program Files\OpenLogic\jdk-22.0.2.9-hotspot;C:\Users\bhuva\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\nodejs\;C:\Users\bhuva\AppData\Local\Android\Sdk\ndk\26.1.10909125;C:\Gradle\gradle-8.11.1\bin;C:\Users\bhuva\AppData\Local\Programs\Python\Python311\Scripts\;C:\Program Files\Apache\Maven\maven-mvnd-1.0.2-windows-amd64\bin;C:\Tomcat\apache-tomcat-9.0.104\bin;C:\Tomcat\apache-tomcat-9.0.104;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\bhuva\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\bhuva\AppData\Local\Programs\Python\Python313\;C:\Users\bhuva\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\bhuva
+USERNAME=bhuva
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD
+TMP=C:\Users\bhuva\AppData\Local\Temp
+TEMP=C:\Users\bhuva\AppData\Local\Temp
+
+
+
+Periodic native trim disabled
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.4768)
+OS uptime: 0 days 20:32 hours
+Hyper-V role detected
+
+CPU: total 8 (initial active 8) (8 cores per cpu, 2 threads per core) family 23 model 104 stepping 1 microcode 0x8608107, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4a, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, hv
+Processor Information for processor 0
+  Max Mhz: 2600, Current Mhz: 2080, Mhz Limit: 2600
+Processor Information for processor 1
+  Max Mhz: 2600, Current Mhz: 2080, Mhz Limit: 2600
+Processor Information for processor 2
+  Max Mhz: 2600, Current Mhz: 2080, Mhz Limit: 2600
+Processor Information for processor 3
+  Max Mhz: 2600, Current Mhz: 2600, Mhz Limit: 2600
+Processor Information for processor 4
+  Max Mhz: 2600, Current Mhz: 2080, Mhz Limit: 2600
+Processor Information for processor 5
+  Max Mhz: 2600, Current Mhz: 2080, Mhz Limit: 2600
+Processor Information for processor 6
+  Max Mhz: 2600, Current Mhz: 2080, Mhz Limit: 2600
+Processor Information for processor 7
+  Max Mhz: 2600, Current Mhz: 2080, Mhz Limit: 2600
+
+Memory: 4k page, system-wide physical 7502M (964M free)
+TotalPageFile size 10502M (AvailPageFile size 69M)
+current process WorkingSet (physical memory assigned to process): 12M, peak: 12M
+current process commit charge ("private bytes"): 55M, peak: 173M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.13+11) for windows-amd64 JRE (17.0.13+11), built on Oct 16 2024 00:10:08 by "admin" with MS VC++ 17.7 (VS2022)
+
+END.
